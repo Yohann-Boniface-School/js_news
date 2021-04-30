@@ -89,7 +89,7 @@ article:focus-within {border-top: 5px solid var(--tertiary-color)}
 
     to {
         border-top: 5px solid var(--tertiary-color);
-        transform: translateY(0px);
+        transform: translateY(0);
         opacity: 1;
     }
 }
