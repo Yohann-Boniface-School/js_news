@@ -80,6 +80,18 @@ function addDefaultNews() {
 }
 
 
+function addNews() {
+    news.push(
+        new News(
+            "news_wrapper",
+            document.getElementById("titre").value,
+            document.getElementById("description").value
+        )
+    )
+    Save()
+}
+
+
 function Save() {
     localStorage.setItem("news", JSON.stringify(news))
 }
