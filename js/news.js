@@ -94,16 +94,6 @@ function loadNews() {
     )
 }
 
-function addNews() {
-    // add This !
-    news.push(
-        document.getElementById("titre").value,
-        document.getElementById("description").value,
-        "news_wrapper"
-    )
-    // Save()
-    // Disabled cause github page, dont wanna get some people to add anything ._.
-}
 
 window.onload = () => {
     (localStorage.getItem("infiniteScrollEnabled") === null) ? addDefaultNews(): loadNews()

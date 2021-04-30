@@ -46,5 +46,19 @@
     </section>
 </main>
 </body>
+
 <script src="js/news.js"></script>
+<script type="text/javascript">
+    function addNews() {
+        news.push(
+            new News(
+                document.getElementById("titre").value,
+                document.getElementById("description").value,
+                "news_wrapper"
+            )
+        )
+
+        Save()
+    }
+</script>
 </html>
