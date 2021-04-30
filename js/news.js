@@ -97,5 +97,12 @@ function loadNews() {
 
 
 window.onload = () => {
-    (localStorage.getItem("infiniteScrollEnabled") === null) ? addDefaultNews(): loadNews()
+    if (localStorage.getItem("infiniteScrollEnabled") === null) {
+        console.log("Creating default news")
+        addDefaultNews()
+
+    } else {
+        console.log("Loading news !")
+        loadNews()
+    }
 }
