@@ -50,24 +50,18 @@ h2 {
     position: relative;
     font-size: 1.5em;
     padding-left: 1em;
+    margin-top: 50px;
 }
+
+/* > border-left for rounded corners */
 
 h2:before {
     content: '';
     position: absolute;
-    border-radius: 5px;
+    border-radius: 10px;
     top: 0; left: 0;
     width: .5em; height: 100%;
     background-color: var(--primary-color-lighter);
-}
-
-
-p, h3 {transition: all .3s ease-in-out}
-
-p:focus-within, h3:focus-within {
-    padding: 25px;
-    background-color: var(--primary-color);
-    outline: none;
 }
 
 #news_wrapper {
@@ -80,10 +74,48 @@ article {
     padding: 5px 25px;
     border-radius: 5px;
     background-color: var(--primary-color-lighter);
+    border-top: 5px solid var(--secondary-color);
+    animation: fade 1s normal;
 }
 
-article:nth-child(2n) {border-top: 5px solid var(--secondary-color)}
-article:nth-child(2n+1) {border-top: 5px solid var(--tertiary-color)}
+article:focus-within {border-top: 5px solid var(--tertiary-color)}
+
+@keyframes fade {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+article header {
+    display: flex;
+    align-items: center;
+}
+
+article header h3 {flex: 1}
+article header img {justify-self: flex-end}
+
+p, h3 {transition: all .3s ease-in-out}
+p {margin-left: 2px}
+
+code {
+    font-family: inherit;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    padding: 4px 8px;
+}
+
+
+p:focus-within, h3:focus-within {
+    padding: 25px;
+    background-color: var(--primary-color);
+    outline: none;
+}
 
 
 form {
@@ -122,21 +154,20 @@ button {
     font-family: inherit;
     color: inherit;
     padding: 5px 10px;
-    background-color: var(--tertiary-color);
-    border-radius: 5px;
+    background-color: var(--secondary-color);
+    border-radius: 5px ;
     border: none;
-    transition: all .3s ease-in-out
 }
 
-button:hover {background-color: var(--secondary-color);}
+form:focus-within > button {background-color: var(--tertiary-color)}
+input, textarea, button {transition: all .3s ease-in-out}
 
 input:focus, textarea:focus, button:focus {
+    box-shadow: 0 0 0 5px var(--tertiary-color);
     outline: none;
-    box-shadow:
-            0 0 0 5px var(--primary-color-lighter),
-            0 0 0 10px var(--tertiary-color);
-    outline-offset: 5px;
 }
+
+button:hover {box-shadow: none}
 
 @media screen and (min-width: 920px) {
     #news_wrapper {grid-template-columns: repeat(3, 1fr)}

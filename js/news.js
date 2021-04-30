@@ -1,31 +1,70 @@
 class News {
+    news_wrapper = document.getElementById("news_wrapper");
 
     constructor(title, description) {
-        if (!title.length || !description.length) return
+        // if (!title.length || !description.length) return
 
         this.title = title
         this.description = description
 
         let article = document.createElement('article')
-
-        let h2 = document.createElement('h2')
+        let headerArticle = document.createElement('header')
+        let imgBin = document.createElement('img')
+        let h3 = document.createElement('h3')
         let p = document.createElement('p')
 
-        h2.textContent = this.title
+        imgBin.src = "svg/trash.svg"
+        imgBin.style.height = "2em"
+        imgBin.style.width = "auto"
+
+        h3.textContent = this.title
         p.textContent = this.description
 
-        article.appendChild(h2)
+        h3.contentEditable = "true"
+        p.contentEditable = "true"
+
+        imgBin.addEventListener("click", (e) => {this.delete(e)})
+
+        headerArticle.appendChild(h3)
+        headerArticle.appendChild(imgBin)
+        article.appendChild(headerArticle)
         article.appendChild(p)
 
-        news_wrapper.appendChild(article)
+        this.news_wrapper.appendChild(article)
+    }
+
+    delete(e) {
+        let article = e.currentTarget.parentNode.parentNode
+
+        article.animate(
+            [
+                {opacity: 1},
+                {opacity: 0}
+            ],
+            {duration: 512}
+        )
+
+        setTimeout(() => {article.remove()},500)
     }
 }
 
 function addNews() {
-    new News(document.getElementById("titre").value, document.getElementById("description").value);
+    new News(document.getElementById("titre").value, document.getElementById("description").value)
 }
 
-window.onload = () => {
-    const news_wrapper = document.getElementById("news_wrapper");
 
+window.onload = () => {
+    new News(
+        "Créez votre Article !",
+        "Créez maintenant votre article grâce au menu juste au dessus ! Supprimez cet article en appuyant sur l'icône poubelle !"
+    )
+
+    setTimeout(
+        () => {
+            new News(
+                "Note de l'auteur !",
+                "Ce site est est démo exemple, Design & Concept : Yohann Boniface"
+            )
+        }, 500
+    )
 }

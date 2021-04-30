@@ -13,6 +13,8 @@
     <meta name="author" content="Yohann Boniface">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <main>
@@ -22,11 +24,13 @@
 
     <form>
         <label for="titre">
-            <input type="text" id="titre"/>
+            <input type="text" id="titre" value="Lorem ipsum dolor sit amet"/>
         </label>
 
         <label for="description">
-            <input type="text" id="description"/>
+            <textarea id="description">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aliquid aperiam fugit laborum nihil officia optio perferendis porro quia recusandae rem, soluta vitae? Dignissimos, error fugiat in maxime obcaecati perferendis repudiandae sequi. Assumenda atque blanditiis ducimus, earum est, hic neque nisi numquam officia quaerat quis quod repellendus reprehenderit repudiandae sequi tempora veniam veritatis. Accusamus architecto aspernatur atque culpa debitis et facilis iste laborum maxime molestias nisi nostrum quis, suscipit ullam veniam
+            </textarea>
         </label>
 
         <button type='button' onclick='addNews();'>Add news</button>
@@ -35,7 +39,7 @@
     <h2>Tous les Articles</h2>
 
     <section id="news_wrapper">
-
+        <!-- Lets the articles flows ! -->
     </section>
 </main>
 </body>
