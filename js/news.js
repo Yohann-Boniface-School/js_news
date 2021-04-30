@@ -72,11 +72,8 @@ class News {
             () => {
                 let delete_index = -1
 
-                console.log(this.id)
-
                 news.forEach(
                     (news, index) => {
-                        console.log(news)
                         if (news.id === this.id) {
                             delete_index = index
                         }
