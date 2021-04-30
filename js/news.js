@@ -81,7 +81,7 @@ class News {
                 console.log(delete_index)
 
                 if (delete_index !== -1) {
-                    news.splice(delete_index)
+                    news.splice(delete_index, 1)
                 }
 
                 article.remove()
