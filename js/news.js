@@ -74,7 +74,8 @@ function addNews() {
         document.getElementById("description").value,
         "news_wrapper"
     )
-    Save()
+    // Save()
+    // Disabled cause github page, dont wanna get some people to add anything ._.
 }
 
 
@@ -84,6 +85,12 @@ function addDefaultNews() {
             "news_wrapper",
             "Note de l'auteur !",
             "Ce site est est démo exemple, Design & Concept : Yohann Boniface"
+        ),
+
+        new News(
+            "news_wrapper",
+            "Attention !",
+            "La version github pages est en read*-only, télécharger ce project puis dé commenter la ligne 77, pour tester la sauvegarde de donnée locale !"
         )
     )
 
