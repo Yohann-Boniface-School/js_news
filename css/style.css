@@ -154,7 +154,7 @@ textarea {
 
 a {text-decoration: none}
 
-button, a {
+button {
     font-family: inherit;
     color: inherit;
     padding: 5px 10px;
