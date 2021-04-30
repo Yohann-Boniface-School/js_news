@@ -82,6 +82,7 @@ function addDefaultNews() {
 
 function Save() {
     localStorage.setItem("news", JSON.stringify(news))
+    console.log("Saved to localStorage !")
 }
 
 
