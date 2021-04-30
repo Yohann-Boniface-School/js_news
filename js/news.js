@@ -67,18 +67,6 @@ class News {
     }
 }
 
-function addNews() {
-    // add This !
-    new News(
-        document.getElementById("titre").value,
-        document.getElementById("description").value,
-        "news_wrapper"
-    )
-    // Save()
-    // Disabled cause github page, dont wanna get some people to add anything ._.
-}
-
-
 function addDefaultNews() {
     news.push(
         new News(
