@@ -152,7 +152,9 @@ textarea {
     border: none;
 }
 
-button {
+a {text-decoration: none}
+
+button, a {
     font-family: inherit;
     color: inherit;
     padding: 5px 10px;
@@ -162,9 +164,9 @@ button {
 }
 
 form:focus-within > button {background-color: var(--tertiary-color)}
-input, textarea, button {transition: all .3s ease-in-out}
+input, textarea, button, a {transition: all .3s ease-in-out}
 
-input:focus, textarea:focus, button:focus {
+input:focus, textarea:focus, button:focus, a:focus {
     box-shadow: 0 0 0 5px var(--tertiary-color);
     outline: none;
 }
