@@ -27,14 +27,12 @@
 /* Using block, cause Single Page :o */
 
 body {
-    font-family: 'JetBrains Mono', monospace;
-
     margin: 0;
     background: var(--primary-color);
-    color: white;
-
-    display: grid;
+    font-family: 'JetBrains Mono', monospace;
     place-content: center;
+    color: white;
+    display: grid;
 }
 
 main {width: 90vw}
@@ -58,11 +56,18 @@ h2:before {
     content: '';
     position: absolute;
     border-radius: 5px;
-
     top: 0; left: 0;
     width: .5em; height: 100%;
-
     background-color: var(--primary-color-lighter);
+}
+
+
+p, h3 {transition: all .3s ease-in-out}
+
+p:focus-within, h3:focus-within {
+    padding: 25px;
+    background-color: var(--primary-color);
+    outline: none;
 }
 
 #news_wrapper {
@@ -89,6 +94,7 @@ form {
 }
 
 input {
+    font-family: inherit;
     color: inherit;
     width: calc(100% - 40px);
     outline: none;
@@ -100,6 +106,7 @@ input {
 }
 
 textarea {
+    font-family: inherit;
     color: inherit;
     height: 15vh;
     width: calc(100% - 40px);
@@ -109,15 +116,26 @@ textarea {
     border-radius: 5px;
     resize: none;
     border: none;
-
 }
 
 button {
+    font-family: inherit;
     color: inherit;
     padding: 5px 10px;
     background-color: var(--tertiary-color);
     border-radius: 5px;
     border: none;
+    transition: all .3s ease-in-out
+}
+
+button:hover {background-color: var(--secondary-color);}
+
+input:focus, textarea:focus, button:focus {
+    outline: none;
+    box-shadow:
+            0 0 0 5px var(--primary-color-lighter),
+            0 0 0 10px var(--tertiary-color);
+    outline-offset: 5px;
 }
 
 @media screen and (min-width: 920px) {
