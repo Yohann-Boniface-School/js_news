@@ -63,7 +63,13 @@ class News {
             {duration: 512}
         )
 
-        setTimeout(() => {article.remove()},500)
+        setTimeout(
+            () => {
+                article.remove()
+                Save()
+
+            }, 500
+        )
     }
 }
 
