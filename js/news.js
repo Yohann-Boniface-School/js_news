@@ -2,13 +2,18 @@ let news = []
 
 
 class News {
+    static numInstances = 0
+    _id = ++News.numInstances;
+
     constructor(parent, title, description) {
         if (!title.length || !description.length) return  // Dont want empty news !
 
+        this.id = this._id;
+        console.log(this._id)
+        console.log(this.id)
         this.title = title
         this.description = description
         this.parent = parent
-
         this.create()
     }
 
@@ -65,9 +70,27 @@ class News {
 
         setTimeout(
             () => {
+                let delete_index = -1
+
+                console.log(this.id)
+
+                news.forEach(
+                    (news, index) => {
+                        console.log(news)
+                        if (news.id === this.id) {
+                            delete_index = index
+                        }
+                    }
+                )
+
+                console.log(delete_index)
+
+                if (delete_index !== -1) {
+                    news.splice(delete_index)
+                }
+
                 article.remove()
                 Save()
-
             }, 500
         )
     }
@@ -95,8 +118,10 @@ function Save() {
 function loadNews() {
     let data = JSON.parse(localStorage.getItem("news"))
     data.forEach(
-        (news) => {
-            new News(news.parent, news.title, news.description)
+        (the_news) => {
+            news.push(
+                new News(the_news.parent, the_news.title, the_news.description)
+            )
         }
     )
 }
