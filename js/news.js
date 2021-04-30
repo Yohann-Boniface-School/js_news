@@ -9,8 +9,6 @@ class News {
         if (!title.length || !description.length) return  // Dont want empty news !
 
         this.id = this._id;
-        console.log(this._id)
-        console.log(this.id)
         this.title = title
         this.description = description
         this.parent = parent
