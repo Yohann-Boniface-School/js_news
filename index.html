@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>News</title>
+
+    <meta name="description" content="POO en JS">
+    <meta name="author" content="Yohann Boniface">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main>
+    <h1>News JS</h1>
+
+    <h2>Écrivez Votre Article</h2>
+
+    <form>
+        <label for="titre">
+            <input type="text" id="titre"/>
+        </label>
+
+        <label for="description">
+            <input type="text" id="description"/>
+        </label>
+
+        <button type='button' onclick='addNews();'>Add news</button>
+    </form>
+
+    <h2>Tous les Articles</h2>
+
+    <section id="news_wrapper">
+
+    </section>
+</main>
+</body>
+<script src="js/news.js"></script>
+</html>
