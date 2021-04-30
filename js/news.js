@@ -34,7 +34,9 @@ class News {
     }
 
     delete(e) {
+        e.currentTarget.style.display = "none" // remove the trash can
         let article = e.currentTarget.parentNode.parentNode
+        article.style.borderTopColor = "#CD5C73"
 
         article.animate(
             [

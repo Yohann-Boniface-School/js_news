@@ -82,11 +82,13 @@ article:focus-within {border-top: 5px solid var(--tertiary-color)}
 
 @keyframes fade {
     from {
+        border-top: 5px solid var(--tertiary-color);
         transform: translateY(50px);
         opacity: 0;
     }
 
     to {
+        border-top: 5px solid var(--tertiary-color);
         transform: translateY(0px);
         opacity: 1;
     }
