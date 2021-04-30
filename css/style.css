@@ -1,0 +1,45 @@
+:root {
+    --primary-color: #1C1F2C;
+    --primary-color-lighter: #33364C;
+
+    --secondary-color: #2EDBE9;
+    --tertiary-color: #CD5C73;
+}
+
+body {
+    margin: 0;
+    background: var(--primary-color);
+    color: white;
+
+    display: grid;
+    place-content: center;
+}
+
+main {width: 90vw}
+form {height: 20vh}
+
+h1 {
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+    background-color: var(--primary-color-lighter);
+    border-radius: 5px;
+    padding: .5em 0;
+}
+
+h2 {font-size: 1.5em}
+
+#news_wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+article {
+    margin: 10px;
+    padding: 5px 25px;
+    border-radius: 5px;
+    background-color: var(--primary-color-lighter);
+}
+
+article:nth-child(2n) {border-top: 5px solid var(--secondary-color)}
+article:nth-child(2n+1) {border-top: 5px solid var(--tertiary-color)}

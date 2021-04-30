@@ -7,6 +7,7 @@ class News {
         this.description = description
 
         let article = document.createElement('article')
+
         let h2 = document.createElement('h2')
         let p = document.createElement('p')
 
@@ -15,6 +16,7 @@ class News {
 
         article.appendChild(h2)
         article.appendChild(p)
+
         news_wrapper.appendChild(article)
     }
 }
