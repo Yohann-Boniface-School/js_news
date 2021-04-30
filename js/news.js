@@ -1,11 +1,10 @@
 class News {
-    news_wrapper = document.getElementById("news_wrapper");
-
-    constructor(title, description) {
+    constructor(parent, title, description) {
         // if (!title.length || !description.length) return
 
         this.title = title
         this.description = description
+        this.parent = document.getElementById(parent)
 
         let article = document.createElement('article')
         let headerArticle = document.createElement('header')
@@ -30,7 +29,7 @@ class News {
         article.appendChild(headerArticle)
         article.appendChild(p)
 
-        this.news_wrapper.appendChild(article)
+        this.parent.appendChild(article)
     }
 
     delete(e) {
@@ -51,21 +50,28 @@ class News {
 }
 
 function addNews() {
-    new News(document.getElementById("titre").value, document.getElementById("description").value)
+    new News(
+        document.getElementById("titre").value,
+        document.getElementById("description").value,
+        "news_wrapper"
+    )
 }
 
 
 window.onload = () => {
     new News(
+        "news_wrapper",
         "Créez votre Article !",
-        "Créez maintenant votre article grâce au menu juste au dessus ! Supprimez cet article en appuyant sur l'icône poubelle !"
+        "Créez maintenant votre article grâce au menu juste au dessus ! Supprimez cet article en appuyant sur l'icône poubelle !",
     )
 
     setTimeout(
         () => {
             new News(
+                "news_wrapper",
                 "Note de l'auteur !",
                 "Ce site est est démo exemple, Design & Concept : Yohann Boniface"
+
             )
         }, 500
     )
