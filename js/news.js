@@ -116,12 +116,9 @@ function loadNews() {
     let data = JSON.parse(localStorage.getItem("news"))
     data.forEach(
         (the_news, index) => {
-            setTimeout(
-                () => {
-                    news.push(
-                        new News(the_news.parent, the_news.title, the_news.description)
-                    )
-                }, 100 * index
+
+            news.push(
+                new News(the_news.parent, the_news.title, the_news.description)
             )
         }
     )
