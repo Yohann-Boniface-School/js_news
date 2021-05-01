@@ -26,6 +26,8 @@ class News {
 
         // Trash Can
         imgBin.src = "svg/trash.svg"
+        imgBin.alt = "Delete"
+
         imgBin.style.height = "2em"
         imgBin.style.width = "auto"
 
@@ -113,9 +115,13 @@ function Save() {
 function loadNews() {
     let data = JSON.parse(localStorage.getItem("news"))
     data.forEach(
-        (the_news) => {
-            news.push(
-                new News(the_news.parent, the_news.title, the_news.description)
+        (the_news, index) => {
+            setTimeout(
+                () => {
+                    news.push(
+                        new News(the_news.parent, the_news.title, the_news.description)
+                    )
+                }, 100 * index
             )
         }
     )
