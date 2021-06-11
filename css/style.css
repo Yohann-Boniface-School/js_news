@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #191c26;
+ --primary-color: #191c26;
   --primary-color-lighter: #3d435d;
 
   --secondary-color: #2EDBE9;
@@ -17,7 +17,7 @@
 }
 
 ::-webkit-scrollbar-corner {
-  background-color: transparent
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-button {
@@ -38,7 +38,7 @@ body {
 }
 
 main {
-  width: 90vw
+  width: 90vw;
 }
 
 h1 {
@@ -108,19 +108,19 @@ article header {
 }
 
 article header h3 {
-  flex: 1
+  flex: 1;
 }
 
 article header img {
-  justify-self: flex-end
+  justify-self: flex-end;
 }
 
 p, h3 {
-  transition: all .3s ease-in-out
+  transition: all .3s ease-in-out;
 }
 
 p {
-  margin-left: 2px
+  margin-left: 2px;
 }
 
 code {
@@ -171,7 +171,7 @@ textarea {
 }
 
 a {
-  text-decoration: none
+  text-decoration: none;
 }
 
 button {
@@ -184,11 +184,11 @@ button {
 }
 
 form:focus-within > button {
-  background-color: var(--tertiary-color)
+  background-color: var(--tertiary-color);
 }
 
 input, textarea, button, a {
-  transition: all .3s ease-in-out
+  transition: all .3s ease-in-out;
 }
 
 input:focus, textarea:focus, button:focus, a:focus {
@@ -197,15 +197,15 @@ input:focus, textarea:focus, button:focus, a:focus {
 }
 
 button:hover {
-  box-shadow: none
+  box-shadow: none;
 }
 
 @media screen and (min-width: 920px) {
   #news_wrapper {
-    grid-template-columns: repeat(3, 1fr)
+    grid-template-columns: repeat(3, 1fr);
   }
 
   form {
-    width: 33%
+    width: 33%;
   }
 }
