@@ -21,8 +21,8 @@
 :root {
   --primary-color: #191c26;
   --primary-color-lighter: #3d435d;
-  --secondary-color: #2EDBE9;
-  --tertiary-color: #CD5C73;
+  --secondary-color: #2Edbe9;
+  --tertiary-color: #cd5c73;
 }
 
 /* Using block, cause Single Page :o */
@@ -55,7 +55,7 @@ h2 {
   padding-left: 1em;
   margin-top: 50px;
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     border-radius: 10px;
@@ -114,7 +114,12 @@ article header {
   }
 }
 
-p, h3 {
+p {
+  margin-left: 2px;
+}
+
+p,
+h3 {
   transition: all .3s ease-in-out;
 
   &:focus-within {
@@ -122,10 +127,6 @@ p, h3 {
     background-color: var(--primary-color);
     outline: none;
   }
-}
-
-p {
-  margin-left: 2px;
 }
 
 code {
@@ -171,7 +172,14 @@ button {
   }
 }
 
-input, textarea, button, a {
+a {
+  text-decoration: none;
+}
+
+input,
+textarea,
+button,
+a {
   transition: all .3s ease-in-out;
 
   &:focus {
@@ -191,10 +199,6 @@ textarea {
   border-radius: 5px;
   resize: none;
   border: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 @media screen and (min-width: 920px) {

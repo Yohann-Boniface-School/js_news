@@ -7,7 +7,7 @@ class News {
 
     constructor(parent, title, description) {
         if (!title.length || !description.length) {
-            return
+            return;
         }
 
         this.id = this._id;
