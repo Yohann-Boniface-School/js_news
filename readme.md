@@ -1,4 +1,4 @@
-# Un site de news [![CodeFactor](https://www.codefactor.io/repository/github/sigmanificient/js_news/badge)](https://www.codefactor.io/repository/github/sigmanificient/js_news)
+# Un site de news 
 
 ## Site fait en BTS Sio
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Sigmanificient/js_news)
