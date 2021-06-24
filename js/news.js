@@ -6,7 +6,9 @@ class News {
     _id = ++News.numInstances;
 
     constructor(parent, title, description) {
-        if (!title.length || !description.length) return  // Dont want empty news !
+        if (!title.length || !description.length) {
+            return
+        }
 
         this.id = this._id;
         this.title = title;
@@ -17,11 +19,11 @@ class News {
 
     create() {
         // Building tags
-        let article = document.createElement('article');
-        let headerArticle = document.createElement('header');
-        let imgBin = document.createElement('img');
-        let h3 = document.createElement('h3');
-        let p = document.createElement('p');
+        let article = document.createElement("article");
+        let headerArticle = document.createElement("header");
+        let imgBin = document.createElement("img");
+        let h3 = document.createElement("h3");
+        let p = document.createElement("p");
 
 
         // Trash Can
@@ -70,20 +72,17 @@ class News {
 
         setTimeout(
             () => {
-                let delete_index = -1;
+                let deleteIndex = -1;
 
                 news.forEach(
                     (news, index) => {
                         if (news.id === this.id) {
-                            delete_index = index;
+                            deleteIndex = index;
                         }
                     }
                 )
-
-                console.log(delete_index);
-
-                if (delete_index !== -1) {
-                    news.splice(delete_index, 1);
+                if (deleteIndex !== -1) {
+                    news.splice(deleteIndex, 1);
                 }
 
                 article.remove();
@@ -108,17 +107,15 @@ function addDefaultNews() {
 
 function Save() {
     localStorage.setItem("news", JSON.stringify(news));
-    console.log("Saved to localStorage !");
 }
 
 
 function loadNews() {
     let data = JSON.parse(localStorage.getItem("news"));
     data.forEach(
-        (the_news, index) => {
-
+        (theNews) => {
             news.push(
-                new News(the_news.parent, the_news.title, the_news.description)
+                new News(theNews.parent, theNews.title, theNews.description)
             )
         }
     )
@@ -126,12 +123,5 @@ function loadNews() {
 
 
 window.onload = () => {
-    if (localStorage.getItem("news") === null) {
-        console.log("Creating default news");
-        addDefaultNews();
-
-    } else {
-        console.log("Loading news !");
-        loadNews();
-    }
+    (localStorage.getItem("news") === null) ? addDefaultNews() : loadNews();
 }
